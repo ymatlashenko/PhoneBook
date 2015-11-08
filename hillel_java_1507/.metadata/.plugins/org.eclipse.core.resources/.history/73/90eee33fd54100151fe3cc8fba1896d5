@@ -1,0 +1,113 @@
+package EListTestNG;
+
+import org.testng.annotations.Test;
+import org.testng.annotations.DataProvider;
+
+public class EListTestNG {
+  @Test(dataProvider = "dp")
+  public void f(Integer n, String s) {
+  }
+
+  @DataProvider
+  public Object[][] dp() {
+    return new Object[][] {
+      new Object[] { 1, "a" },
+      new Object[] { 2, "b" },
+    };
+  }
+
+  @Test
+  public void addEnd() {
+    throw new RuntimeException("Test not implemented");
+  }
+
+  @Test
+  public void addPos() {
+    throw new RuntimeException("Test not implemented");
+  }
+
+  @Test
+  public void addStart() {
+    throw new RuntimeException("Test not implemented");
+  }
+
+  @Test
+  public void clear() {
+    throw new RuntimeException("Test not implemented");
+  }
+
+  @Test
+  public void delEnd() {
+    throw new RuntimeException("Test not implemented");
+  }
+
+  @Test
+  public void delPos() {
+    throw new RuntimeException("Test not implemented");
+  }
+
+  @Test
+  public void delStart() {
+    throw new RuntimeException("Test not implemented");
+  }
+
+  @Test
+  public void get() {
+    throw new RuntimeException("Test not implemented");
+  }
+
+  @Test
+  public void halfReverse() {
+    throw new RuntimeException("Test not implemented");
+  }
+
+  @Test
+  public void init() {
+    throw new RuntimeException("Test not implemented");
+  }
+
+  @Test
+  public void max() {
+    throw new RuntimeException("Test not implemented");
+  }
+
+  @Test
+  public void maxInd() {
+    throw new RuntimeException("Test not implemented");
+  }
+
+  @Test
+  public void min() {
+    throw new RuntimeException("Test not implemented");
+  }
+
+  @Test
+  public void minInd() {
+    throw new RuntimeException("Test not implemented");
+  }
+
+  @Test
+  public void reverse() {
+    throw new RuntimeException("Test not implemented");
+  }
+
+  @Test
+  public void set() {
+    throw new RuntimeException("Test not implemented");
+  }
+
+  @Test
+  public void size() {
+    throw new RuntimeException("Test not implemented");
+  }
+
+  @Test
+  public void sort() {
+    throw new RuntimeException("Test not implemented");
+  }
+
+  @Test
+  public void toArray() {
+    throw new RuntimeException("Test not implemented");
+  }
+}

@@ -1,0 +1,2 @@
+INDEX VERSION 1.127+D:\git\PhoneBook\.metadata\.plugins\org.eclipse.jdt.core
+339051542.index

@@ -1,0 +1,401 @@
+
+
+public class StarsMain 
+{
+	public static void main(String[] args) 
+	{
+		Stars2();
+		System.out.println();	
+		Stars1();
+		System.out.println();	
+		Stars3();
+		System.out.println();	
+		Stars4();
+		System.out.println();	
+		Stars5();
+		System.out.println();	
+		Stars6();
+		System.out.println();	
+		Stars7();
+		System.out.println();
+		Stars8();
+		System.out.println();
+		Stars9();
+		System.out.println();
+		Stars10();
+		System.out.println();
+		Stars11();
+		System.out.println();
+		Stars12();
+		System.out.println();
+		Stars13();
+		System.out.println();
+		Stars14();
+		System.out.println();
+		Stars15();
+
+	}
+
+
+
+	//*****************************************************	
+	public static void Stars1()
+	{
+		int k= 7;
+		for (int j = 1; j<=7; j++)
+		{
+			for (int i = 1; i<=k; i++)
+			{
+				System.out.print("*");	
+			}
+			System.out.println();	
+			k--;
+
+		}
+
+	}
+
+
+
+	//**********пол*******************************************		
+	public static void Stars2()
+	{
+		for (int j = 1; j<=7; j++)
+		{
+			for (int i = 1; i<=7; i++)
+			{
+				System.out.print("*");	
+			}
+			System.out.println();	
+
+		}
+
+	}
+
+
+	//*****************************************************	
+	public static void Stars3()
+	{
+		int k= 1;
+		for (int j = 1; j<=7; j++)
+		{
+			for (int i = 1; i<=k; i++)
+			{
+				System.out.print("*");	
+			}
+			System.out.println();	
+			k++;
+
+		}
+
+	}
+
+
+	//*****************************************************		
+	public static void Stars4()
+	{
+		for (int j = 1; j<=7; j++)
+		{
+			for (int i = 1; i<=7; i++)
+			{
+				if ((j == 1 || j == 7) || (i == 1 || i == 7))
+				{
+					System.out.print("*");
+				}
+				else
+				{
+					System.out.print(" ");
+				}
+			}
+			System.out.println();	
+
+		}
+
+	}
+
+
+	//*****************************************************		
+	public static void Stars5()
+	{
+		int k=7;
+		for (int j = 1; j<=7; j++)
+		{
+
+			for (int i = 1; i<=7; i++)
+			{
+				if (i>=k)
+				{
+					System.out.print("*");
+				}
+				else
+				{
+					System.out.print(" ");
+
+				}
+
+			}
+			System.out.println();	
+			k--;
+
+
+		}
+
+	}
+
+
+	//*****************************************************		
+	public static void Stars6()
+	{
+		int k=1;
+		for (int j = 1; j<=7; j++)
+		{
+
+			for (int i = 1; i<=7; i++)
+			{
+				if (i>=k)
+				{
+					System.out.print("*");
+				}
+				else
+				{
+					System.out.print(" ");
+
+				}
+
+			}
+			System.out.println();	
+			k++;
+
+
+		}
+
+	}
+
+
+	//*****************************************************		
+	public static void Stars7()
+	{
+		int k=1;
+		int l=7;
+		for (int j = 1; j<=7; j++)
+		{
+			for (int i = 1; i<=7; i++)
+			{
+				if (k>i||l<i)
+				{
+					System.out.print(" ");	
+
+				}
+				else
+				{
+					System.out.print("*");
+				}
+			}
+			System.out.println();
+			k++;
+			l--;
+
+		}
+
+	}
+
+
+
+	//*****************************************************		
+	public static void Stars8()
+	{
+		int k=1;
+		int l=7;
+		for (int j = 1; j<=7; j++)
+		{
+			for (int i = 1; i<=7; i++)
+			{
+				if (k<i||l>i)
+				{
+					System.out.print(" ");	
+
+				}
+				else
+				{
+					System.out.print("*");
+				}
+			}
+			System.out.println();
+			k++;
+			l--;
+
+		}
+
+	}
+
+	//*****************************************************		
+	public static void Stars9()
+	{
+		int k=1;
+		int l=7;
+		for (int j = 1; j<=7; j++)
+		{
+			for (int i = 1; i<=7; i++)
+			{
+				if (k==i || l==i)
+				{
+					System.out.print("*");	
+
+				}
+				else
+				{
+					System.out.print(" ");
+		
+				}
+			}
+			System.out.println();
+			k++;
+			l--;
+
+		}
+
+	}
+
+
+	//*****************************************************		
+	public static void Stars10()
+	{
+		int k=1;
+		int l=7;
+		for (int j = 1; j<=7; j++)
+		{
+			for (int i = 1; i<=7; i++)
+			{
+				if (k<i || l<i)
+				{
+					System.out.print(" ");	
+
+				}
+				else
+				{
+					System.out.print("*");
+				}
+			}
+			System.out.println();
+			k++;
+			l--;
+
+		}
+
+	}
+
+
+
+
+	//*****************************************************		
+	public static void Stars11()
+	{
+		int k=1;
+		int l=7;
+		for (int j = 1; j<=7; j++)
+		{
+			for (int i = 1; i<=7; i++)
+			{
+				if (k>i || l>i)
+				{
+					System.out.print(" ");	
+
+				}
+				else
+				{
+					System.out.print("*");
+				}
+			}
+			System.out.println();
+			k++;
+			l--;
+
+		}
+
+	}
+
+
+	//*****************************************************		
+	public static void Stars12()
+	{
+		int k = 1;
+		for (int j = 1; j<=7; j++)
+		{
+			for (int i = 1; i<=7; i++)
+			{
+				System.out.print(k);	
+			}
+			System.out.println();
+			k++;
+
+		}
+
+
+	}
+
+	//*****************************************************		
+	public static void Stars13()
+	{
+		int k = 7;
+		for (int j = 1; j<=7; j++)
+		{
+			for (int i = 1; i<=7; i++)
+			{
+				System.out.print(k);	
+			}
+			System.out.println();
+			k--;
+
+		}
+
+
+
+	}
+	
+	
+	//*****************************************************		
+		public static void Stars14()
+		{
+			
+			for (int j = 1; j<=7; j++)
+			{
+				int k = 1;
+				for (int i = 1; i<=7; i++)
+				{
+					System.out.print(k);	
+					k++;
+				}
+				System.out.println();
+				
+
+			}
+
+
+
+		}
+		
+		
+		//*****************************************************		
+				public static void Stars15()
+				{
+					
+					for (int j = 1; j<=7; j++)
+					{
+						int k = 7;
+						for (int i = 1; i<=7; i++)
+						{
+							System.out.print(k);
+							k--;
+						}
+						System.out.println();
+						
+
+					}
+
+
+
+				}
+			
+	
+	
+}

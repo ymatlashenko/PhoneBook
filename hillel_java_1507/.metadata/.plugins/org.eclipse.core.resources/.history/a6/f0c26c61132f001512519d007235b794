@@ -1,0 +1,6 @@
+import javax.swing.JFrame;
+
+public class XFrame extends JFrame
+{
+	public
+}

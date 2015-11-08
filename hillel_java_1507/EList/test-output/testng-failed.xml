@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
+  <test name="Default test(failed)">
+    <classes>
+      <class name="EListTestNG">
+        <methods>
+          <include name="testDelPos_0" invocation-numbers="0 1 2 3 4"/>
+          <include name="testDelStart_null" invocation-numbers="0 1 2 3 4"/>
+          <include name="testReverse_0" invocation-numbers="0 1 2 3 4"/>
+          <include name="testaddPos_0" invocation-numbers="0 1 2 3"/>
+          <include name="minIndex_null" invocation-numbers="0 1 2 3 4"/>
+          <include name="testHalfreverse_null" invocation-numbers="0 1 2 3 4"/>
+          <include name="testaddPos_null" invocation-numbers="0 1 2 3 4"/>
+          <include name="Set_null" invocation-numbers="0 1 2 3 4"/>
+          <include name="testHalfreverse_0" invocation-numbers="0 1 2 3 4"/>
+          <include name="testSort_0" invocation-numbers="0 1 2 3 4"/>
+          <include name="testSort_null" invocation-numbers="0 1 2 3 4"/>
+          <include name="testDelPos_null" invocation-numbers="0 1 2 3 4"/>
+          <include name="testMax_null" invocation-numbers="0 1 2 3 4"/>
+          <include name="Get_null" invocation-numbers="0 1 2 3 4"/>
+          <include name="Get_0" invocation-numbers="0 1 2 3 4"/>
+          <include name="testReverse_null" invocation-numbers="0 1 2 3 4"/>
+          <include name="testDelEndMany" invocation-numbers="1"/>
+          <include name="testMaxMany" invocation-numbers="1"/>
+          <include name="testMin_null" invocation-numbers="0 1 2 3 4"/>
+          <include name="testDelEnd_0" invocation-numbers="0 1 2 3 4"/>
+          <include name="testAddStart_null" invocation-numbers="0 1 2 3 4"/>
+          <include name="testAddEnd_null" invocation-numbers="0 1 2 3 4"/>
+          <include name="minInd_0" invocation-numbers="0 1 2 3 4"/>
+          <include name="maxInd_null" invocation-numbers="0 1 2 3 4"/>
+          <include name="testDelEnd_null" invocation-numbers="0 1 2 3 4"/>
+        </methods>
+      </class> <!-- EListTestNG -->
+    </classes>
+  </test> <!-- Default test(failed) -->
+</suite> <!-- Failed suite [Default suite] -->

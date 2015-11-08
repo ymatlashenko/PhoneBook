@@ -1,0 +1,165 @@
+
+public class AList2 implements EList {
+	private int maxLength = 100;
+	private int[] arr = new int[maxLength];
+	private int start = 50;
+	private int end = 49;
+	
+	
+	@Override
+	public int size() 
+	{
+		System.out.println(end-start+1);
+		return end-start+1;
+		
+	}
+
+	@Override
+	public void init(int[] ini)
+	{
+		if (ini == null|| ini.length == 0)
+		{
+			ini = new int[0];
+			start = 50;
+			end = 49;
+		}
+		else
+		{
+			int d = (ini.length%2==0)?0:1;
+			start = (maxLength/2 - ini.length/2);
+			end = (maxLength/2 + ini.length/2)-1+d;
+			arr = new int[100];
+			int j = 0;
+			for (int i = start; i <= end; i++) 
+			{
+				arr[i] = ini[j];
+				j++;
+			}
+		}
+
+	}
+
+	@Override
+	public int[] toArray()
+	{
+		int[] temp = new int[end-start+1];
+		int j=0;
+		for (int i = start; i <= end; i++)
+		
+		{
+			
+			temp[j] = arr[i];
+			System.out.println(arr[i]);
+			j++;
+		}
+		return temp;
+	}
+
+	@Override
+	public void clear() 
+	{
+		init (null);
+	}
+
+	@Override
+	public int get(int pos) 
+	{
+		if(pos > size()-1 || pos < 0)
+			throw new ListIsEmptyException();
+
+		return arr[start+pos];
+	}
+
+	@Override
+	public void set(int pos, int val) 
+	{
+		if(pos > size()-1 || pos < 0)
+			throw new ListIsEmptyException();
+
+		arr[start+pos]=val;
+	}
+
+	@Override
+	public void addStart(int val) 
+	{
+		for (int i=end;i>=start;i--)
+		{
+			arr[i+1]=arr[i];
+		}
+		start--;
+		arr[start]=val;
+	}
+
+	@Override
+	public void addEnd(int val) {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public void addPos(int pos, int val) {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public int delStart() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public int delEnd() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public int delPos(int pos) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public int min() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public int max() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public int minInd() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public int maxInd() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public void sort() {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public void reverse() {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public void halfReverse() {
+		// TODO Auto-generated method stub
+
+	}
+
+}

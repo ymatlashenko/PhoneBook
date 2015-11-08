@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+<fullyQualifiedTypeName name="java.lang.Boolean"/>
+<fullyQualifiedTypeName name="ClassCycles"/>
+<fullyQualifiedTypeName name="java.util.Arrays"/>
+<fullyQualifiedTypeName name="java.util.Collection"/>
+<fullyQualifiedTypeName name="org.junit.runners.Parameterized"/>
+<fullyQualifiedTypeName name="org.junit.runner.RunWith"/>
+<fullyQualifiedTypeName name="org.junit.runners.Parameterized.Parameters"/>
+<fullyQualifiedTypeName name="org.junit.Test"/>
+<fullyQualifiedTypeName name="ListIsEmptyException"/>
+<fullyQualifiedTypeName name="java.lang.IllegalArgumentException"/>
+</qualifiedTypeNameHistroy>

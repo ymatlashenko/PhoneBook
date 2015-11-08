@@ -1,0 +1,905 @@
+import static org.junit.Assert.*;
+
+
+
+import org.junit.Test;
+
+//import java.util.Arrays;
+//import java.util.Collection;
+
+//import org.junit.Test;
+//import org.junit.runner.RunWith;
+//import org.junit.runners.Parameterized;
+//import org.junit.runners.Parameterized.Parameters;
+
+
+
+//@RunWith(Parameterized.class)
+public class EListTest 
+{
+	/*EList rr = null;
+	
+	public EListTest(EList zz)
+	{
+		rr = zz;
+	}*/
+	//EList rr = new AList0();
+	//EList rr = new AList1();
+	EList rr = new AList2();
+	
+	/*@Parameterized.Parameters
+	public static Collection primeNumbers()
+	{
+		return Arrays.asList(new Object[][] {
+			{new AList0()},
+			{new AList1()},
+			{new AList2()}
+		});
+	}*/
+	
+	//=====================================
+	// size, init, toArray
+	//=====================================
+	@Test 
+	public void Size_nullTest() 
+	{
+		
+		int[] ini = null;
+		rr.init(ini);
+		assertEquals(0, rr.size());
+		int[] exp = {};
+		int[] act = rr.toArray();
+		assertArrayEquals(exp, act);
+	}
+	@Test 
+	public void Size_0Test() 
+	{
+		
+		int[] ini = {};
+		rr.init(ini);
+		assertEquals(0, rr.size());
+		int[] exp = {};
+		int[] act = rr.toArray();
+		assertArrayEquals(exp, act);
+	}
+	@Test
+	public void Size_1Test() 
+	{
+		
+		int[] ini = {10,54,23};
+		rr.init(ini);
+		assertEquals(3, rr.size());
+		int[] exp = {10,54,23};
+		int[] act = rr.toArray();
+		assertArrayEquals(exp, act);
+	}
+	@Test
+	public void Size_2Test() 
+	{
+		
+		int[] ini = {10,20};
+		rr.init(ini);
+		assertEquals(2, rr.size());
+		int[] exp = {10,20};
+		int[] act = rr.toArray();
+		assertArrayEquals(exp, act);
+	}
+	@Test
+	public void Size_manyTest() 
+	{
+		
+		int[] ini = {10,20,33,77,11,24,19};
+		rr.init(ini);
+		assertEquals(7, rr.size());
+		int[] exp = {10,20,33,77,11,24,19};
+		int[] act = rr.toArray();
+		assertArrayEquals(exp, act);
+	}
+	
+	//=====================================
+	// get
+	//=====================================
+	@Test (expected = ListIsEmptyException.class)
+	public void Get_nullTest()
+	{
+		int[] ini = null;
+		rr.init(ini);
+		int act = rr.get(1);
+		int exp = 0;
+		assertEquals(exp, act);
+	}
+	@Test (expected = ListIsEmptyException.class)
+	public void Get_0Test()
+	{
+		int[] ini = {};
+		rr.init(ini);
+		;
+		assertEquals(0, rr.get(2));
+	}
+	@Test
+	public void Get_manyTest()
+	{
+		int[] ini = {10,20,33,77,11,24,19};
+		rr.init(ini);
+		
+		assertEquals(33, rr.get(2));
+	}
+	
+	@Test
+	public void Get_1Test()
+	{
+		int[] ini = {10};
+		rr.init(ini);
+		;
+		assertEquals(10, rr.get(0));
+	}
+	@Test
+	public void Get_2Test()
+	{
+		int[] ini = {10,20};
+		rr.init(ini);
+		;
+		assertEquals(20, rr.get(1));
+	}
+	@Test (expected = ListIsEmptyException.class)
+	public void Get_2_outTest()
+	{
+		int[] ini = {10,20};
+		rr.init(ini);
+		;
+		assertEquals(0, rr.get(4));
+	}
+	@Test (expected = ListIsEmptyException.class)
+	public void Get_2_out_2Test()
+	{
+		int[] ini = {10,20};
+		rr.init(ini);
+		;
+		assertEquals(0, rr.get(-4));
+	}
+
+	//=====================================
+	//      set
+	//=====================================
+	@Test (expected = ListIsEmptyException.class)
+	public void Set_0Test()
+	{
+		int[] ini = {};
+		rr.init(ini);
+		assertEquals(0, rr.size());
+		rr.set(0,12);
+		int[] exp = {};
+		int[] act = rr.toArray();
+		assertArrayEquals(exp, act);
+	}
+	@Test
+	public void SetTest_1()
+	{
+		int[] ini = {10};
+		rr.init(ini);
+		assertEquals(1, rr.size());
+		rr.set(0,12);
+		int[] exp = {12};
+		int[] act = rr.toArray();
+		assertArrayEquals(exp, act);
+	}
+	@Test
+	public void SetTest_2()
+	{
+		int[] ini = {10,20};
+		rr.init(ini);
+		assertEquals(2, rr.size());
+		rr.set(1,12);
+		int[] exp = {10,12};
+		int[] act = rr.toArray();
+		assertArrayEquals(exp, act);
+	}
+	@Test
+	public void Set_manyTest()
+	{
+		int[] ini = {10,20,33,77,11,24,19};
+		rr.init(ini);
+		assertEquals(7, rr.size());
+		rr.set(1,12);
+		int[] exp = {10,12,33,77,11,24,19};
+		int[] act = rr.toArray();
+		assertArrayEquals(exp, act);
+	}
+	@Test (expected = ListIsEmptyException.class)
+	public void Set_outTest()
+	{
+		int[] ini = {10,20,33,77,11,24,19};
+		rr.init(ini);
+		assertEquals(7, rr.size());
+		rr.set(18,12);
+		int[] exp = {10,20,33,77,11,24,19};
+		int[] act = rr.toArray();
+		assertArrayEquals(exp, act);
+	}
+/*
+	//=====================================
+	// clear
+	//=====================================
+
+	@Test
+	public void ClearTest() {
+		fail("Not yet implemented");
+	}
+
+
+	
+*/
+	//=====================================
+	// addStart
+	//=====================================
+	@Test
+	public void AddStartTest() 
+	{
+		
+		int[] ini = {};
+		rr.init(ini);
+		rr.addStart(99);
+		//assertEquals(1, rr.size());
+		//assertEquals(99, rr.get(0));
+		int[] exp = {99};
+		int[] act = rr.toArray();
+		assertArrayEquals(exp, act);
+	}
+	@Test
+	public void AddStart_1Test() 
+	{
+		
+		int[] ini = {10};
+		rr.init(ini);
+		rr.addStart(99);
+		//assertEquals(2, rr.size());
+		//assertEquals(99, rr.get(0));
+		int[] exp = {99,10};
+		int[] act = rr.toArray();
+		assertArrayEquals(exp, act);
+	}
+	@Test
+	public void AddStart_2Test() 
+	{
+		
+		int[] ini = {10,20};
+		rr.init(ini);
+		rr.addStart(99);
+		//assertEquals(3, rr.size());
+		//assertEquals(99, rr.get(0));
+		int[] exp = {99,10,20};
+		int[] act = rr.toArray();
+		assertArrayEquals(exp, act);
+	}
+	@Test
+	public void AddStart_manyTest() 
+	{
+		
+		int[] ini = {10,20,33,77,11,24,19};
+		rr.init(ini);
+		rr.addStart(99);
+		//assertEquals(8, rr.size());
+		//assertEquals(99, rr.get(0));
+		int[] exp = {99,10,20,33,77,11,24,19};
+		int[] act = rr.toArray();
+		assertArrayEquals(exp, act);
+	}
+//=================================================
+//                  addEnd	
+//=================================================
+	@Test
+	public void AddEnd_0Test()
+	{
+		int[] ini = {};
+		rr.init(ini);
+		rr.addEnd(77);
+		//assertEquals(8, rr.size());
+		//assertEquals(99, rr.get(0));
+		int[] exp = {77};
+		int[] act = rr.toArray();
+		assertArrayEquals(exp, act);
+	}@Test
+	public void AddEnd_1Test()
+	{
+		int[] ini = {10};
+		rr.init(ini);
+		rr.addEnd(77);
+		//assertEquals(8, rr.size());
+		//assertEquals(99, rr.get(0));
+		int[] exp = {10,77};
+		int[] act = rr.toArray();
+		assertArrayEquals(exp, act);
+	}@Test
+	public void AddEnd_2Test()
+	{
+		int[] ini = {10,20};
+		rr.init(ini);
+		rr.addEnd(77);
+		//assertEquals(8, rr.size());
+		//assertEquals(99, rr.get(0));
+		int[] exp = {10,20,77};
+		int[] act = rr.toArray();
+		assertArrayEquals(exp, act);
+	}
+	@Test
+	public void AddEnd_manyTest()
+	{
+		int[] ini = {10,20,33,77,56,78,98};
+		rr.init(ini);
+		rr.addEnd(77);
+		//assertEquals(8, rr.size());
+		//assertEquals(99, rr.get(0));
+		int[] exp = {10,20,33,77,56,78,98,77};
+		int[] act = rr.toArray();
+		assertArrayEquals(exp, act);
+	}
+	
+	
+	//=====================================
+	// addPos
+	//=====================================
+	@Test (expected = ListIsEmptyException.class)
+	public void AddPos_0Test()
+	{
+		int[] ini = {};
+		rr.init(ini);
+		assertEquals(0, rr.size());
+		rr.addPos(6,12);
+		int[] exp = {10,20,33,77,11,24,12,19};
+		int[] act = rr.toArray();
+		assertArrayEquals(exp, act);
+	}
+	@Test
+	public void AddPos_1Test()
+	{
+		int[] ini = {10};
+		rr.init(ini);
+		assertEquals(1, rr.size());
+		rr.addPos(0,12);
+		int[] exp = {12,10};
+		int[] act = rr.toArray();
+		assertArrayEquals(exp, act);
+	}
+	@Test
+	public void AddPos_2Test()
+	{
+		int[] ini = {10,20};
+		rr.init(ini);
+		assertEquals(2, rr.size());
+		rr.addPos(1,12);
+		int[] exp = {10,12,20};
+		int[] act = rr.toArray();
+		assertArrayEquals(exp, act);
+	}
+	@Test
+	public void AddPosTest()
+	{
+		int[] ini = {10,20,33,77,11,24,19};
+		rr.init(ini);
+		assertEquals(7, rr.size());
+		rr.addPos(6,12);
+		int[] exp = {10,20,33,77,11,24,12,19};
+		int[] act = rr.toArray();
+		assertArrayEquals(exp, act);
+	}
+	@Test
+	public void AddPos2Test()
+	{
+		int[] ini = {10,20,33,77,11,24,19};
+		rr.init(ini);
+		assertEquals(7, rr.size());
+		rr.addPos(0,12);
+		int[] exp = {12,10,20,33,77,11,24,19};
+		int[] act = rr.toArray();
+		assertArrayEquals(exp, act);
+	}
+	@Test (expected = ListIsEmptyException.class)
+	public void AddPos_outTest()
+	{
+		int[] ini = {10,20,33,77,11,24,19};
+		rr.init(ini);
+		assertEquals(7, rr.size());
+		rr.addPos(12,12);
+		int[] exp = {12,10,20,33,77,11,24,19};
+		int[] act = rr.toArray();
+		assertArrayEquals(exp, act);
+	}
+
+	
+	//=====================================
+	// delStart
+	//=====================================
+	@Test (expected = ListIsEmptyException.class)
+	public void DelStart_0()
+	{
+		
+		int[] ini = {};
+		rr.init(ini);
+		rr.delStart();
+	}
+	@Test
+	public void DelStart_1()
+	{
+		
+		int[] ini = {10};
+		rr.init(ini);
+		int val = rr.delStart();
+		assertEquals(10, val);
+		assertEquals(0, rr.size());
+		int[] exp = {};
+		int[] act = rr.toArray();
+		assertArrayEquals(exp, act);		
+	}
+	@Test
+	public void DelStar_2()
+	{
+		
+		int[] ini = {10,20};
+		rr.init(ini);
+		int val = rr.delStart();
+		assertEquals(10, val);
+		assertEquals(1, rr.size());
+		int[] exp = {20};
+		int[] act = rr.toArray();
+		assertArrayEquals(exp, act);		
+	}
+	@Test
+	public void DelStart_many()
+	{
+		
+		int[] ini = {10,20,33,77,11,24,19};
+		rr.init(ini);
+		int val = rr.delStart();
+		assertEquals(10, val);
+		assertEquals(6, rr.size());
+		int[] exp = {20,33,77,11,24,19};
+		int[] act = rr.toArray();
+		assertArrayEquals(exp, act);		
+	}
+
+	
+	//=====================================
+	// delEnd
+	//=====================================
+	@Test (expected = ListIsEmptyException.class)
+	public void DelEnd_0Test() 
+	{
+		int[] ini = {};
+		rr.init(ini);
+		int val = rr.delEnd();
+		assertEquals(19, val);
+		assertEquals(6, rr.size());
+		int[] exp = {10,20,33,77,11,24};
+		int[] act = rr.toArray();
+		assertArrayEquals(exp, act);	}
+	@Test
+	public void DelEnd_1Test() 
+	{
+		int[] ini = {10};
+		rr.init(ini);
+		int val = rr.delEnd();
+		assertEquals(10, val);
+		assertEquals(0, rr.size());
+		int[] exp = {};
+		int[] act = rr.toArray();
+		assertArrayEquals(exp, act);	}
+	@Test
+	public void DelEnd_2Test() 
+	{
+		int[] ini = {10,20};
+		rr.init(ini);
+		int val = rr.delEnd();
+		assertEquals(20, val);
+		assertEquals(1, rr.size());
+		int[] exp = {10};
+		int[] act = rr.toArray();
+		assertArrayEquals(exp, act);	}
+
+	
+	@Test
+	public void DelEnd_manyTest() 
+	{
+		int[] ini = {10,20,33,77,11,24,19};
+		rr.init(ini);
+		int val = rr.delEnd();
+		assertEquals(19, val);
+		assertEquals(6, rr.size());
+		int[] exp = {10,20,33,77,11,24};
+		int[] act = rr.toArray();
+		assertArrayEquals(exp, act);
+	}
+
+	//=====================================
+	// delPos
+	//=====================================
+
+	@Test (expected = ListIsEmptyException.class)
+	public void DelPos_0Test() 
+	{
+		int[] ini = {};
+		rr.init(ini);
+		int val = rr.delPos(2);
+		assertEquals(33, val);
+		assertEquals(6, rr.size());
+		int[] exp = {10,20,77,11,24,19};
+		int[] act = rr.toArray();
+		assertArrayEquals(exp, act);
+	}
+	
+	@Test
+	public void DelPos_1Test() 
+	{
+		int[] ini = {10};
+		rr.init(ini);
+		int val = rr.delPos(0);
+		assertEquals(10, val);
+		assertEquals(0, rr.size());
+		int[] exp = {};
+		int[] act = rr.toArray();
+		assertArrayEquals(exp, act);
+	}
+	
+	@Test
+	public void DelPos_2Test() 
+	{
+		int[] ini = {10,20};
+		rr.init(ini);
+		int val = rr.delPos(1);
+		assertEquals(20, val);
+		assertEquals(1, rr.size());
+		int[] exp = {10};
+		int[] act = rr.toArray();
+		assertArrayEquals(exp, act);
+	}
+	
+	@Test
+	public void DelPos_manyTest() 
+	{
+		int[] ini = {10,20,33,77,11,24,19};
+		rr.init(ini);
+		int val = rr.delPos(2);
+		assertEquals(33, val);
+		assertEquals(6, rr.size());
+		int[] exp = {10,20,77,11,24,19};
+		int[] act = rr.toArray();
+		assertArrayEquals(exp, act);
+	}
+	
+	@Test (expected = IllegalArgumentException.class)
+	public void DelPos_manyOutTest() 
+	{
+		int[] ini = {10,20,33,77,11,24,19};
+		rr.init(ini);
+		int val = rr.delPos(26);
+		assertEquals(33, val);
+		assertEquals(6, rr.size());
+		int[] exp = {10,20,77,11,24,19};
+		int[] act = rr.toArray();
+		assertArrayEquals(exp, act);
+	}
+	
+	//=====================================
+	// min
+	//=====================================
+	
+	@Test (expected = ListIsEmptyException.class)
+	public void Min0Test() 
+	{
+		int[] ini = {};
+		rr.init(ini);
+		int val = rr.min();
+		assertEquals(12, val);
+	}
+	
+	@Test
+	public void Min1Test() 
+	{
+		int[] ini = {12};
+		rr.init(ini);
+		int val = rr.min();
+		assertEquals(12, val);
+	}
+	
+	@Test
+	public void Min2Test() 
+	{
+		int[] ini = {97,14};
+		rr.init(ini);
+		int val = rr.min();
+		assertEquals(14, val);
+	}
+	
+	@Test
+	public void MinManyTest() 
+	{
+		int[] ini = {12,56,87,55,97,14,56,68};
+		rr.init(ini);
+		int val = rr.min();
+		assertEquals(12, val);
+	}
+
+	
+	//=====================================
+	// max
+	//=====================================
+
+	
+	@Test (expected = ListIsEmptyException.class)
+	public void max0Test() 
+	{
+		int[] ini = {};
+		rr.init(ini);
+		int val = rr.max();
+		assertEquals(12, val);
+	}
+	
+	@Test
+	public void max1Test() 
+	{
+		int[] ini = {12};
+		rr.init(ini);
+		int val = rr.max();
+		assertEquals(12, val);
+	}
+	
+	@Test
+	public void max2Test() 
+	{
+		int[] ini = {97,14};
+		rr.init(ini);
+		int val = rr.max();
+		assertEquals(97, val);
+	}
+	
+	@Test
+	public void maxManyTest() 
+	{
+		int[] ini = {12,56,87,55,97,14,56,68};
+		rr.init(ini);
+		int val = rr.max();
+		assertEquals(97, val);
+	}
+	
+	
+	
+	//=====================================
+	// minInd
+	//=====================================
+	
+	@Test (expected = ListIsEmptyException.class)
+	public void minInd0Test() 
+	{
+		int[] ini = {};
+		rr.init(ini);
+		int val = rr.minInd();
+		assertEquals(12, val);
+	}
+	
+	@Test
+	public void minInd1Test() 
+	{
+		int[] ini = {12};
+		rr.init(ini);
+		int val = rr.minInd();
+		assertEquals(0, val);
+	}
+	
+	@Test
+	public void minInd2Test() 
+	{
+		int[] ini = {97,14};
+		rr.init(ini);
+		int val = rr.minInd();
+		assertEquals(1, val);
+	}
+	
+	@Test
+	public void minIndManyTest() 
+	{
+		int[] ini = {12,56,1,55,97,14,56,68};
+		rr.init(ini);
+		int val = rr.minInd();
+		assertEquals(2, val);
+	}
+
+	
+	//=====================================
+	// maxInd
+	//=====================================
+
+	
+	@Test (expected = ListIsEmptyException.class)
+	public void maxInd0Test() 
+	{
+		int[] ini = {};
+		rr.init(ini);
+		int val = rr.maxInd();
+		assertEquals(12, val);
+	}
+	
+	@Test
+	public void maxInd1Test() 
+	{
+		int[] ini = {12};
+		rr.init(ini);
+		int val = rr.maxInd();
+		assertEquals(0, val);
+	}
+	
+	@Test
+	public void maxInd2Test() 
+	{
+		int[] ini = {97,14};
+		rr.init(ini);
+		int val = rr.maxInd();
+		assertEquals(0, val);
+	}
+	
+	@Test
+	public void maxIndManyTest() 
+	{
+		int[] ini = {12,56,87,55,97,14,56,68};
+		rr.init(ini);
+		int val = rr.maxInd();
+		assertEquals(4, val);
+	}
+
+
+	//=====================================
+	// sort
+	//=====================================
+	@Test (expected = ListIsEmptyException.class)
+	public void Sort_0() 
+	{
+		
+		int[] ini = {};
+		rr.init(ini);
+		rr.sort();
+		int[] exp = {};
+		int[] act = rr.toArray();
+		assertArrayEquals(exp, act);
+	}
+	@Test
+	public void Sort_1() 
+	{
+		
+		int[] ini = {10};
+		rr.init(ini);
+		rr.sort();
+		int[] exp = {10};
+		int[] act = rr.toArray();
+		assertArrayEquals(exp, act);
+	}
+	@Test
+	public void Sort_2() 
+	{
+		
+		int[] ini = {77,11};
+		rr.init(ini);
+		rr.sort();
+		int[] exp = {11,77};
+		int[] act = rr.toArray();
+		assertArrayEquals(exp, act);
+	}
+	@Test
+	public void Sort_many() 
+	{
+		
+		int[] ini = {10,20,33,77,11,24,19};
+		rr.init(ini);
+		rr.sort();
+		int[] exp = {10,11,19,20,24,33,77};
+		int[] act = rr.toArray();
+		assertArrayEquals(exp, act);
+	}
+
+	//=====================================
+	// reverse
+	//=====================================
+	@Test (expected = ListIsEmptyException.class)
+	public void Reverse_0() 
+	{
+		
+		int[] ini = {};
+		rr.init(ini);
+		rr.reverse();
+		int[] exp = {};
+		int[] act = rr.toArray();
+		assertArrayEquals(exp, act);
+	}
+	@Test
+	public void Reverse_1() 
+	{
+		
+		int[] ini = {10};
+		rr.init(ini);
+		rr.reverse();
+		int[] exp = {10};
+		int[] act = rr.toArray();
+		assertArrayEquals(exp, act);
+	}
+	@Test
+	public void Reverse_2() 
+	{
+		
+		int[] ini = {10,20};
+		rr.init(ini);
+		rr.reverse();
+		int[] exp = {20,10};
+		int[] act = rr.toArray();
+		assertArrayEquals(exp, act);
+	}
+	@Test
+	public void Reverse_many() 
+	{
+		
+		int[] ini = {10,20,33,77,11,24,19};
+		rr.init(ini);
+		rr.reverse();
+		int[] exp = {19,24,11,77,33,20,10};
+		int[] act = rr.toArray();
+		assertArrayEquals(exp, act);
+	}
+
+	//=====================================
+	// halfReverse
+	//=====================================
+	@Test (expected = ListIsEmptyException.class)
+	public void HalfReverse_0() 
+	{
+		
+		int[] ini = {};
+		rr.init(ini);
+		rr.halfReverse();
+		int[] exp = {};
+		int[] act = rr.toArray();
+		assertArrayEquals(exp, act);
+	}
+	@Test
+	public void HalfReverse_1() 
+	{
+		
+		int[] ini = {10};
+		rr.init(ini);
+		rr.halfReverse();
+		int[] exp = {10};
+		int[] act = rr.toArray();
+		assertArrayEquals(exp, act);
+	}
+	@Test
+	public void HalfReverse_2() 
+	{
+		
+		int[] ini = {10,20};
+		rr.init(ini);
+		rr.halfReverse();
+		int[] exp = {20,10};
+		int[] act = rr.toArray();
+		assertArrayEquals(exp, act);
+	}
+
+	@Test
+	public void HalfReverse_many_even() 
+	{
+		
+		int[] ini = {10,20,33,11,24,19};
+		rr.init(ini);
+		rr.halfReverse();
+		int[] exp = {11,24,19,10,20,33};
+		int[] act = rr.toArray();
+		assertArrayEquals(exp, act);
+	}
+
+	@Test
+	public void HalfReverse_many_odd() 
+	{
+		
+		int[] ini = {10,20,33,77,11,24,19};
+		rr.init(ini);
+		rr.halfReverse();
+		int[] exp = {11,24,19,77,10,20,33};
+		int[] act = rr.toArray();
+		assertArrayEquals(exp, act);
+	}
+
+}
